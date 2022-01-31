@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grenze:wght@800&display=swap");
+.theme--light {
+  --bg-color: 255, 255, 255;
+  --font-color: 30, 33, 36;
+}
+
+.theme--dark {
+  --bg-color: 30, 33, 36;
+  --font-color: 255, 255, 255;
+}
+
+/*# sourceMappingURL=styles.css.map */

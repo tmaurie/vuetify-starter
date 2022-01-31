@@ -1,28 +1,47 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+
+  <v-app :style="{background: $vuetify.theme.themes[theme].background}">
+
+    <!--    appBar & navDrawer-->
+    <AppNavDrawer/>
+
+    <!--main view / router-->
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+
+    <!--    footer-->
+    <v-footer>
+      <v-col
+          class="text-center"
+          cols="12"
+      >
+        {{ new Date().getFullYear() }} — <strong>Hello </strong>
+
+      </v-col>
+    </v-footer>
+
+  </v-app>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppNavDrawer from "@/components/AppNavDrawer";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AppNavDrawer
+  },
+  computed: {
+    theme() {
+      return (this.$vuetify.theme.dark) ? 'dark' : 'light'
+    }
   }
+
+
 }
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './assets/styles/styles.css';
 </style>
